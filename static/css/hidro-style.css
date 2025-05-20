@@ -1,0 +1,163 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f8ff;
+  color: #034e7b;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background-color: #0277bd;
+  color: #e1f5fe;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(2, 119, 189, 0.5);
+}
+
+.header h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #e1f5fe;
+  margin-left: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #a4d7f5;
+}
+.navbar-brand {
+    align-items: start;
+  }
+/* Hero Section */
+.hero {
+  background: linear-gradient(135deg, #0288d1 0%, #81d4fa 100%);
+  color: white;
+  padding: 60px 20px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+/* Main container */
+.container {
+  flex-grow: 1;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+
+/* Sections style */
+.info-section,
+.benefits-section,
+.graphs-section {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(2, 119, 189, 0.15);
+  padding: 30px 25px;
+  margin-bottom: 40px;
+  transition: box-shadow 0.3s ease;
+}
+
+.info-section:hover,
+.benefits-section:hover,
+.graphs-section:hover {
+  box-shadow: 0 6px 15px rgba(2, 119, 189, 0.3);
+}
+
+h2 {
+  color: #01579b;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #054a7e;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #0277bd;
+  font-size: 1.1rem;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* Graph placeholder */
+#graphs-placeholder {
+  border-radius: 8px;
+  background-color: #e1f5fe;
+  border: 2px dashed #0277bd;
+  color: #0277bd;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  background-color: #0277bd;
+  color: #e1f5fe;
+  padding: 15px 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(2, 119, 189, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  
+}

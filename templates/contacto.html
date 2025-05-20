@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Energía Renovable</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container mt-5">
+ <header class="header">
+    <nav class="navbar navbar-expand-lg navbar-solar sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+          <img src="/static/media/Diseño_sin_título__2_-removebg-preview.png" alt="logo" width="50" height="50" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavSolar"
+          aria-controls="navbarNavSolar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavSolar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link active" href="{{ url_for('energias') }}">Energías</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('impacto') }}">Impacto</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('contacto') }}">Formulario</a></li>
+          </ul>
+          <a href="#" id="btnScrollTop" class="btn btn-solar position-fixed bottom-0 end-0 m-4"
+            style="z-index:1000;">↑</a>
+        </div>
+      </div>
+  </header>
+
+    <h1 class="mb-4">Calculadora de Consumo de Energía Renovable ⚡</h1>
+
+    <form method="POST">
+        <div class="mb-3">
+            <label for="consumo_total" class="form-label">Consumo total mensual (kWh):</label>
+            <input type="number" step="0.01" min="0" class="form-control" id="consumo_total" name="consumo_total" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="consumo_renovable" class="form-label">Consumo renovable mensual (kWh):</label>
+            <input type="number" step="0.01" min="0" class="form-control" id="consumo_renovable" name="consumo_renovable" required>
+        </div>
+
+        <button type="submit" class="btn btn-success">Calcular porcentaje renovable</button>
+    </form>
+
+    {% if porcentaje is not none %}
+        <div class="alert alert-info mt-4">
+            {% if porcentaje is string %}
+                {{ porcentaje }}
+            {% else %}
+                ✅ El <strong>{{ porcentaje }}%</strong> de tu consumo mensual proviene de fuentes renovables.
+            {% endif %}
+        </div>
+    {% endif %}
+
+</body>
+</html>

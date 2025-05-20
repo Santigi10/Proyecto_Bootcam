@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Energía Solar - ENERHIT</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
+    rel="stylesheet" />
+  <link href="/static/css/solar-style.css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="/static/media/Diseño_sin_título__2_-removebg-preview.png">
+
+</head>
+
+<body>
+  <header class="hero solar-header">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Energía Solar</h1>
+      <p class="lead">Descubre cómo ENERHIT impulsa el uso de energía solar en las zonas rurales de Risaralda.</p>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-solar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+        <img src="/static/media/naranjalogo.png" alt="logo" width="50" height="50" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavSolar"
+        aria-controls="navbarNavSolar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavSolar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link active" href="{{ url_for('energias') }}">Energías</a></li>
+          <li class="nav-item"><a class="nav-link" href="/templates/impacto.html">Impacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="/templates/contacto.html">Formulario</a></li>
+        </ul>
+        <a href="#" id="btnScrollTop" class="btn btn-solar position-fixed bottom-0 end-0 m-4"
+          style="z-index:1000;">↑</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5">
+    <div class="container">
+      <h2 class="mb-4">¿Qué es la Energía Solar?</h2>
+      <p>
+        La energía solar es una fuente de energía limpia, renovable y abundante que se obtiene directamente del sol.
+        ENERHIT
+        promueve su implementación para mejorar la calidad de vida de las comunidades rurales mediante paneles solares y
+        tecnologías asociadas.
+      </p>
+    </div>
+  </section>
+  <hr />
+
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4">Beneficios de la Energía Solar</h2>
+      <ul>
+        <li>Energía sostenible y sin emisiones contaminantes.</li>
+        <li>Reducción de costos en el consumo eléctrico.</li>
+        <li>Independencia energética para zonas rurales aisladas.</li>
+        <li>Fácil mantenimiento y larga vida útil de los sistemas solares.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+        <h2 class="mb-4">Datos y Gráficas</h2>
+        <div id="chartContainer" class="border rounded p-4" style="min-height: 300px;">
+            <form action="/grafico_torta" method="post">
+                <button type="submit" class="btn btn-success">Generar Gráfico</button>
+            </form>
+            {% if imagen %}
+            <img src="data:image/png;base64,{{ imagen }}" alt="Gráfico de energía solar"
+                class="img-fluid rounded shadow" />
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+  <footer class="bg-dark text-white text-center py-3">
+    <p class="mb-0">&copy; 2025 ENERHIT - Energía para el Campo</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/js/solar-script.js"></script>
+</body>
+
+</html>

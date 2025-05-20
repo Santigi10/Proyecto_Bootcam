@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Energía Hidroeléctrica - Energías Renovables</title>
+    <link rel="stylesheet" href="/static/css/hidro-style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/static/media/Diseño_sin_título__2_-removebg-preview.png">
+
+</head>
+
+<body>
+    <header class="header d-flex justify-content-end align-items-center px-4">
+        <nav class="navbar navbar-expand-lg navbar-solar sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url_for('index') }}">
+                    <img src="/static/media/Diseño_sin_título__2_-removebg-preview.png" alt="logo" width="50"
+                        height="50" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavSolar"
+                    aria-controls="navbarNavSolar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavSolar">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('sobre_nosotros') }}">Sobre
+                                Nosotros</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="{{ url_for('energias') }}">Energías</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('impacto') }}">Impacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url_for('contacto') }}">Formulario</a></li>
+                    </ul>
+                    <a href="#" id="btnScrollTop" class="btn btn-solar position-fixed bottom-0 end-0 m-4"
+                        style="z-index:1000;">↑</a>
+                </div>
+            </div>
+        </nav>
+        <section class="py-5">
+    </header>
+
+    <section class="hero text-center py-5 px-3">
+        <h2>Potenciando el futuro con energía hidráulica</h2>
+        <p class="lead mx-auto" style="max-width: 700px;">
+            La energía hidroeléctrica aprovecha la fuerza del agua para generar electricidad limpia y renovable,
+            contribuyendo a un planeta más sostenible y eficiente.
+        </p>
+    </section>
+
+    <main class="container my-4">
+        <section class="info-section mb-5 p-4 rounded shadow-sm bg-white">
+            <h2>¿Qué es la energía hidroeléctrica?</h2>
+            <p>
+                Es la energía que se obtiene a partir del movimiento del agua, generalmente de ríos y presas. Al
+                aprovechar la fuerza del agua en caída o flujo, se convierte en electricidad mediante turbinas y
+                generadores.
+            </p>
+        </section>
+
+        <section class="benefits-section mb-5 p-4 rounded shadow-sm bg-white">
+            <h2>Beneficios principales</h2>
+            <ul>
+                <li>Fuente limpia y renovable.</li>
+                <li>Bajo costo operativo a largo plazo.</li>
+                <li>Contribuye a la reducción de emisiones de CO₂.</li>
+                <li>Provee energía estable y confiable.</li>
+                <li>Impulsa el desarrollo regional y generación de empleo.</li>
+            </ul>
+        </section>
+
+        <section class="graphs-section p-4 rounded shadow-sm bg-white">
+            <h2>Datos y estadísticas de producción de energia </h2>
+            <div id="graphs-placeholder"
+                style="height: auto; border: 2px dashed #0a74da; align-items: center; color: #0a74da; font-style: italic;">
+
+                <form action="/diagrama_area" method="post">
+                    <button type="submit" class="btn btn-success">Generar Gráfico</button>
+                </form>
+
+
+                <div>
+                    {% if imagen %}
+                    <div class="d-flex justify-content-center">
+                        <img src="data:image/png;base64,{{ imagen }}" alt="Gráfico de energía hidráulica"
+                            class="img-fluid rounded shadow" />
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+        </section>
+    </main>
+
+    <footer class="footer text-center py-3">
+        &copy; 2025 Energía Hidroeléctrica. Todos los derechos reservados.
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff;
+  color: #4a4a4a;
+  margin: 0;
+  padding: 0;
+}
+
+.hero.solar-header {
+  background: linear-gradient(135deg, #e76f51, #f4a261);
+  color: white;
+  padding: 6rem 0 4rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-solar {
+  background-color: #e76f51;
+  box-shadow: 0 2px 4px rgba(231, 111, 81, 0.6);
+}
+
+.navbar-solar .navbar-nav .nav-link {
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-solar .navbar-nav .nav-link:hover,
+.navbar-solar .navbar-nav .nav-link.active {
+  color: #f4a261;
+  font-weight: 700;
+}
+
+.navbar-solar .navbar-brand img {
+  filter: brightness(0) invert(1);
+}
+
+.btn-solar {
+  background-color: #f4a261;
+  color: #e76f51;
+  font-weight: 700;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  line-height: 48px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.btn-solar:hover {
+  background-color: #e76f51;
+  color: #fff;
+}
+
+section.py-5 {
+  padding-top: 3rem !important;
+  padding-bottom: 3rem !important;
+}
+
+.bg-light {
+  background-color: #fff8f0 !important;
+  color: #4a4a4a;
+  padding: 3rem 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #e76f51;
+}
+
+h1.display-4 {
+  font-weight: 700;
+}
+
+h2.mb-4 {
+  font-weight: 700;
+  margin-bottom: 1.5rem !important;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+}
+
+#chartContainer {
+  background-color: #fff8f0; 
+  box-shadow: 0 0 10px rgba(231, 111, 81, 0.3);
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+  color: #d65a3a;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 8px;
+}
+
+
+footer.bg-dark {
+  background-color: #3a1f14 !important;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .hero.solar-header {
+    padding: 4rem 1rem 3rem;
+  }
+
+  .navbar-solar .navbar-nav .nav-link {
+    padding: 0.6rem 0.5rem;
+    font-size: 0.9rem;
+  }
+}
